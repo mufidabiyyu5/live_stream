@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>APlayer-Demo</title>
+  <script type="text/javascript" src="dist/avideo.js"></script>
+  <style>
+    video {
+      width: 320px;
+      height: 190px;
+    }
+  </style>
+</head>
+<body>
+<h1>All Video Player</h1><br>
+
+<video controls loop autoplay is="very-cool" id="output"></video>
+<br><br>
+<button onclick="play('https://bunkertv.org/css/logo_neu.mp4')">Play Mp4</button><br>
+<button onclick="play('https://bunkertv.org/streams/demo/livetest.m3u8')">Play HLS</button><br>
+<button onclick="play('rtmp://bunkertv.org:9001/demo/livetest')">Play RTMP</button><br>
+<button onclick="play('https://bunkertv.org/streams/dash/livetest.mpd')">Play DASH</button><br>
+<button onclick="output.pause(true)">Pause</button><br>
+<button onclick="output.pause(false)">Unpause</button><br>
+<button onclick="output.stop()">Stop</button><br>
+
+<script>
+    const output = document.getElementById("output");
+
+    function play(url){
+        output.playURL(url).then(()=>{
+            console.log("playing");
+        });
+    }
+</script>
+</body>
+</html>

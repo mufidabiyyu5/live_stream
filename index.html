@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Streaming NU Green Tea</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body onload="play('rtmp://110.239.67.242/live/antoni_ok2')">
+    <div class="row align-items-center justify-content-center m-auto">
+        <div class="col-4 d-grid align-items-center justify-content-center text-center text-animate">
+            <h3 class="white-space">#FixJadi</h3>
+        </div>
+        <div class="col-5 d-flex align-items-center justify-content-center video">
+            <!-- <iframe width="660" height="420"
+                src="rtmp://110.239.67.242/live/tais?autoplay=1&controls=0&loop=1&mute=1">
+            </iframe> -->
+            <!-- <embed type="application/x-shockwave-flash" src="./f4player/player.swf?v1.3.5" width="650" id="f" name="f" height="400" flashvars="skin=./f4player/skins/mySkin.swf&thumbnail=./f4player/intro.png&stream=rtmp://110.239.67.242/live/tais&streamname=penguinstunnel&live=1" allowScriptAccess="always" allowfullscreen="true"/> -->
+            <video controls loop autoplay is="very-cool" id="output" width="600" height="400"></video>
+                
+        </div>
+        <div class="col-3 d-block text-center video-caption">
+            <div id="text" class="m-auto">Hallo</div>
+            <h3>#FixJadi</h3>
+        </div>
+    </div>
+    <script src="./avideo-master/dist/avideo.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+        var text = ["Hola", "Hallo", "Merhaba"];
+        var counter = 0;
+        var elem = $("#text");
+        setInterval(change, 3000);
+        function change() {
+            elem.fadeOut(function(){
+                elem.html(text[counter]);
+                counter++;
+                if(counter >= text.length) { counter = 0; }
+                elem.fadeIn();
+            });
+        }
+    </script>
+    <script>
+        const output = document.getElementById("output");
+        function play(url){
+            output.playURL(url);
+        }
+    </script>
+</body>
+</html>

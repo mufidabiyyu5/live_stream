@@ -1,0 +1,40 @@
+body{
+    background: url(./background.png);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-position: top right;
+}
+
+#text{
+    color: #006131;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.item-text-moving{
+    margin-right: 32px;
+}
+
+#words {
+    position: relative;
+    animation: move-words 20s linear infinite;
+    margin: 0;
+}
+
+span{
+    font-size: 32px;
+    font-weight: 600;
+    color: #006131;
+}
+
+@keyframes move-words {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+}
