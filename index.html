@@ -21,94 +21,20 @@
             
         </div>
     </div> -->
+    <!-- <iframe width="660" height="420"
+        src="https://chase-livestream-2023.p.at.co.id/?enablejsapi=1">
+    </iframe> -->
     <div class="center">
         <video controls loop autoplay muted is="very-cool" id="output" width="530" height="365"></video>
         <div id="box">
-            <div id="text">Di 2024 orang ini bakal lebih famous dari gamers cakep idaman</div>
+            <div id="text"></div>
         </div>
     </div>
     <script src="./avideo-master/dist/avideo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script>
-        var text = [
-            "Di 2024 orang ini bakal lebih famous dari gamers cakep idaman",
-            "Mbak taylor... plis aminin orang ini biar selalu menang war tiket musisi favoritnya di 2024", 
-            "NuMin yakin orang ini konten tiktoknya FYP terus di 2024",
-            "Waktunya orang yang di 2024 bakal naik gaji ini tampil",
-            "Orang ini gak bakal kena spoiler film kesukaannya di tahun 2024",
-            "Semoga 2024 tim bola favorit orang ini juara",
-            "2024 orang ini bakal dichat duluan sama crushnya",
-            "Semoga 2024 orang ini gak perlu habis berjuta-juta buat gatcha",
-            "Dear 2024, semoga orang ini bakal diabsen streamer favoritnya",
-            "Semoga 2024 orang ini bakal pake kaos band tapi bisa nyebutin 5 lagunya",
-            "2024 muka orang ini tambah glowing biar makin slay",
-            "Di 2024 orang ini bakal ngelarin skripsi gak pake revisi",
-            "2024 orang ini bakalan jago pantun biar CAKEP!",
-            "Di 2024 orang ini lebih banyak nice dream daripada nice try",
-            "2024 orang ini bisa checkout wishlist tanpa overthinking",
-            "Moga aja di 2024 orang ini tiap swipe right auto match",
-            "Sederhana tapi bikin seneng, 2024 orang ini bakal diucapin ultah sama idolanya",
-            "Orang ini bakal jadi KARTAP alias KARYAWAN MANTAP di 2024",
-            "NuMin doain di 2024 orang ini menang giveaway tiap bulan",
-            "2024 orang ini gak bakal dapet chat \"Minjem dulu seratus\"",
-            "NuMin berharap di 2024 orang ini bakal terhindar dari temen yang mendang-mending",
-            "2024 tahunnya orang ini dijauhin dari temen yang hobi minta tethering",
-            "Orang ini gak bakal ngerasain WIFI lemot di tahun 2024",
-        ];
-        var index = 0;
-        var elem = $("#text");
-        setInterval(change, 3000);
-
-        // document.addEventListener('keyup', (e) => {
-        //     let key = e.key
-        //     if (key == "a" || key == "A") { 
-        //         console.log('You pressed the A key!');
-        //         index = 1
-        //     } else if (key == "s" || key == "S") {
-        //         console.log('You pressed the S key!');
-        //         index = 2
-        //     } else {
-        //         console.log('You pressed the other key!');
-        //         index = 0
-        //     }
-
-        //     elem.fadeOut(function(){
-        //         elem.html(text[index]);
-        //         resize_to_fit();
-        //         // if(counter >= text.length) { counter = 0; }
-        //         elem.fadeIn();
-        //     });
-        // })
-
-        function change() {
-                elem.fadeOut(function(){
-                    elem.html(text[index]);
-                    index++;
-                    resize_to_fit();
-                    if(index >= text.length) { index = 0; }
-                    elem.fadeIn();
-                }
-            );
-        }
-
-    </script> 
-    <script>
-        $(document).ready(function () {
-            resize_to_fit();
-        }); 
-
-        function resize_to_fit(){
-            if ($('#box div').height() > $('#box').height()) {
-                while ($('#box div').height() > $('#box').height()) {
-                    $('#box div').css('font-size', (parseInt($('#box div').css('font-size')) - 1) + "px");
-                }
-            } else {
-                $('#box div').css('font-size', "36px");
-            }
-        }
-    </script>
+    <script src="./js/text.js"></script>
     <script>
         const output = document.getElementById("output");
         function init(url){
