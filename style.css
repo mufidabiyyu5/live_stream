@@ -27,7 +27,6 @@ body{
     bottom: 133px;
     left: 1180px;
     right: 78px;
-    font-size: 48px;
     overflow: hidden;
 }
 
@@ -44,8 +43,8 @@ video{
     color: #006131;
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    /* font-size: 32px;
-    line-height: 40px; */
+    /* font-size: 32px; */
+    line-height: 40px;
     font-weight: 700;
     text-transform: uppercase;
 }
