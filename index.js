@@ -2,6 +2,7 @@ const express = require('express')
 const { createServer } = require('node:http');
 const { join } = require('node:path')
 const { Server } = require('socket.io')
+const basicAuth = require('express-basic-auth');
 
 const app = express()
 const server = createServer(app)
@@ -16,6 +17,12 @@ app.use("/asset", express.static("public"));
 app.get('/', (req, res) => {
     res.sendFile(join(__dirname, 'index.html'))
 });
+
+app.use('/manual', basicAuth({
+    users: { 'antoni': 'antoni' },
+    challenge: true,
+    unauthorizedResponse: 'Unauthorized Access',
+}));
 
 app.get('/manual', (req, res) => {
     res.sendFile(join(__dirname, 'manual.html'))
