@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 body{
     height: 100vh;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* Ubah URL foto sesuai dengan lokasi foto */
-    background-image: url('images/NuGreenTea_Output_LiveCam_Alpha.png');
+    background-image: url('./images/NuGreenTea_Output_LiveCam_Alpha.png');
     background-size: 100% 100%;
     background-position: center;
     -moz-background-size: 100% 100%;
@@ -17,36 +16,54 @@ body{
 }
 
 .player-wrapper{
-    width: 542px;
+    width: 350px;
+    height: 320px;
+    position: absolute;
+    top: 28.75%;
+    /* bottom: 40%; */
+    left: 40%;
+    /* right: 30%; */
+    /* margin: auto; */
+    transform: scaleX(1.238) scaleY(1.938);
+    /* width: 542px;
     height: 372px;
     position: absolute;
     top: auto;
-    bottom: 39px;
-    left: 593px;
-    right: 478px;
-    /* transform: scaleX(1.238);
+    bottom: 50%;
+    left: 50%;
+    right: auto;
+    transform: scaleX(1.238);
     transform: scaleY(1.938); */
 }
 
 #lumio-stream-player{
-    border-radius: 24px;
+    /* width: 350px; */
+    height: 100%;
+    border-radius: 16px;
 }
 
 #box{
     height: 234px;
+    width: 250px;
+    position: relative;
+    top: 30%;
+    /* bottom: 139px; */
+    /* right: 30%; */
+    left: 75%;
+    transform: scaleX(1.238) scaleY(1.938);
+    /* height: 234px;
     width: 342px;
     position: relative;
     top: 77px;
     bottom: 139px;
     right: 77px;
-    left: 1200px;
+    left: 1200px; */
     /* transform: scaleX(1.238);
     transform: scaleY(1.938); */
 }
 
 #text{
-    font-size: 36px;
-    line-height: 40px;
+    line-height: 32px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     color: #285A2C;

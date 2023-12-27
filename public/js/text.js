@@ -97,6 +97,6 @@ function resize_to_fit(){
             $('#box #text').css('font-size', (parseInt($('#box #text').css('font-size')) - 1) + "px");
         }
     } else {
-        $('#box div').css('font-size', "36px");
+        $('#box div').css('font-size', "24px");
     }
 }

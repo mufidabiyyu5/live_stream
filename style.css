@@ -17,14 +17,22 @@ body{
 }
 
 .player-wrapper{
-    width: 542px;
+    width: 350px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    /* bottom: auto; */
+    left: 40%;
+    /* right: 30%; */
+    transform: scaleX(1.238) scaleY(1.938);
+    /* width: 542px;
     height: 372px;
     position: absolute;
     top: auto;
-    bottom: 39px;
-    left: 593px;
-    right: 478px;
-    /* transform: scaleX(1.238);
+    bottom: 50%;
+    left: 50%;
+    right: auto;
+    transform: scaleX(1.238);
     transform: scaleY(1.938); */
 }
 
@@ -35,11 +43,19 @@ body{
 #box{
     height: 234px;
     width: 342px;
+    position: absolute;
+    top: 20%;
+    /* bottom: 139px; */
+    /* right: 30%; */
+    left: 71%;
+    transform: scaleX(1.238) scaleY(1.938);
+    /* height: 234px;
+    width: 342px;
     position: relative;
     top: 77px;
     bottom: 139px;
     right: 77px;
-    left: 1200px;
+    left: 1200px; */
     /* transform: scaleX(1.238);
     transform: scaleY(1.938); */
 }
