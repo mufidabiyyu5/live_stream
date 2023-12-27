@@ -40,7 +40,9 @@ $(document).ready( () => {
     }
 })
 
-// window.onload = getArray();
+if(itemsArray.length > 0) {
+    window.onload = getArray();
+}
 
 console.log(itemsArray);
 
@@ -57,7 +59,7 @@ function getArray(){
     } else if(itemsArray.length == text.length) {
         localStorage.clear();
         itemsArray = [];
-    } else {
+    } else if(itemsArray.length > 0) {
         do {
             if (itemsArray[index] != text[index]) {
                     elem.fadeOut(function(){
