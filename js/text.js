@@ -40,11 +40,12 @@ $(document).ready( () => {
     }
 })
 
-window.onload = getArray();
+// window.onload = getArray();
 
 console.log(itemsArray);
 
 function getArray(){
+    console.log(index);
     if (itemsArray.length == 0) {
         elem.fadeOut(function(){
             elem.html(text[index]);
