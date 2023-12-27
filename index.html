@@ -24,24 +24,78 @@
     <!-- <iframe width="660" height="420"
         src="https://chase-livestream-2023.p.at.co.id/?enablejsapi=1">
     </iframe> -->
-    <div class="center">
-        <video controls loop autoplay muted is="very-cool" id="output" width="530" height="365"></video>
-        <div id="box">
-            <div id="text"></div>
-        </div>
+    <!-- <div class="center d-flex">
+        
+    </div> -->
+    <div class="player-wrapper">
+        <div id="lumio-stream-player"></div>
     </div>
+    <!-- <video controls loop autoplay muted is="very-cool" id="output" width="542" height="372"></video> -->
+    <div id="box" class="text-center">
+        <div id="text" style="font-size: 36px;"></div>
+    </div>
+
+        <script src="https://sdk.lumio.id/webview/dist/lumio-stream-player/v1/lumio-stream-player.js"></script>
+        <!-- <script src="..."></script> -->
+        <script>
+            const lumioStreamPlayer = new LumioStreamPlayer({
+                container: "lumio-stream-player",
+                aspectRatio: "4:3",
+                title: "live streaming by lumio.id",
+                autoStart: true,
+                autoFallback: true,
+                mute: true,
+                controls: true,
+                loop: true,
+                showBigPlayButton: true,
+                mute: false,
+                sources: [
+                    {
+                        type: "webrtc",
+                        file: "wss://emitter.lumio.id:3334/app/stream",
+                    },
+                ],
+                webrtcConfig: {
+                    timeoutMaxRetry: 10,
+                    connectionTimeout: 10000,
+                },
+                onReady: function () {
+                    console.log("onReady");
+                },
+                onStateChanged: function (state) {
+                    console.log("stateChanged", state);
+                },
+                onSeek: function (position) {
+                    console.log("onSeek", position);
+                },
+                onSeeked: function () {
+                    console.log("onSeeked");
+                },
+                onTime: function (duration) {
+                    // This may occur as frequently as 10 times per second
+                    // console.log("onTime", duration);
+                },
+                onClicked: function (EventObject) {
+                    console.log("onClicked", EventObject);
+                },
+                onDestroy: function () {
+                    console.log("onDestroy");
+                },
+            });
+        </script>
+
     <script src="./avideo-master/dist/avideo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="./js/text.js"></script>
-    <script>
+    <!-- <script>
         const output = document.getElementById("output");
         function init(url){
             output.playURL(url);
         }
 
         window.onload = init('rtmp://110.239.67.242/live/antoni_ok2');
-    </script>
+    </script> -->
 </body>
 </html>
