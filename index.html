@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Streaming NU Green Tea</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
-    <div class="player-wrapper">
-        <div id="lumio-stream-player"></div>
-    </div>
-    <!-- <video controls loop autoplay muted is="very-cool" id="output" width="542" height="372"></video> -->
-    <div id="box" class="text-center">
-        <div id="text" style="font-size: 36px;"></div>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Live Streaming NU Green Tea</title>
+        <link rel="stylesheet" href="asset/style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="player-wrapper">
+            <div id="lumio-stream-player"></div>
+        </div>
+        <!-- <video controls loop autoplay muted is="very-cool" id="output" width="542" height="372"></video> -->
+        <div id="box" class="text-center">
+            <div id="text" style="font-size: 36px"></div>
+        </div>
 
         <script src="https://sdk.lumio.id/webview/dist/lumio-stream-player/v1/lumio-stream-player.js"></script>
         <script>
-
             const lumioStreamPlayer = new LumioStreamPlayer({
                 container: "lumio-stream-player",
                 aspectRatio: "4:3",
@@ -64,12 +68,30 @@
             });
         </script>
 
-    <script src="./avideo-master/dist/avideo.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="./js/text.js"></script>
-    <!-- <script>
+        <!-- <script src="./avideo-master/dist/avideo.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script src="asset/js/text.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            // const messages = document.getElementById("text");
+
+            socket.on("chat message", (msg) => {
+                console.log("chat message", msg);
+                document.getElementById("text").innerHTML = msg;
+            });
+        </script>
+        <!-- <script>
         const output = document.getElementById("output");
         function init(url){
             output.playURL(url);
@@ -77,5 +99,5 @@
 
         window.onload = init('rtmp://110.239.67.242/live/antoni_ok2');
     </script> -->
-</body>
+    </body>
 </html>
