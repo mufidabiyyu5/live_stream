@@ -68,8 +68,16 @@
                 padding: 8px;
             }
 
+            tr:hover{
+                background-color: #b1b1b1;
+            }
+
             tr:nth-child(even) {
                 background-color: #dddddd;
+            }
+            
+            tr:nth-child(even):hover {
+                background-color: #b1b1b1;
             }
         </style>
     </head>
@@ -162,7 +170,7 @@
                 const item = document.createElement("li");
                 item.textContent = msg;
                 messages.appendChild(item);
-                window.scrollTo(0, document.body.scrollHeight);
+                // window.scrollTo(0, document.body.scrollHeight);
             });
 
             const togglButton = document.getElementById("toggle-btn");
