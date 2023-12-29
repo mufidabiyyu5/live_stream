@@ -33,7 +33,8 @@ console.log(time);
 
 $(document).ready( () => {
     if (time != null) {
-        index = 0;
+        index = 1;
+        document.getElementById("text").innerHTML = text[0];
         setInterval(change, time * 1000);
     } else {
         getArray();
