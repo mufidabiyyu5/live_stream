@@ -84,18 +84,23 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             const socket = io();
+            var elem = $("#text");
             // const messages = document.getElementById("text");
 
             socket.on("chat message", (msg) => {
                 console.log("chat message", msg);
-                document.getElementById("text").innerHTML = msg;
-                if ($('#box #text').height() > $('#box').height()) {
-                    while ($('#box #text').height() > $('#box').height()) {
-                        $('#box #text').css('font-size', (parseInt($('#box #text').css('font-size')) - 1) + "px");
+                // document.getElementById("text").innerHTML = msg;
+                elem.fadeOut(function(){
+                    elem.html(msg);
+                    if ($('#box #text').height() > $('#box').height()) {
+                        while ($('#box #text').height() > $('#box').height()) {
+                            $('#box #text').css('font-size', (parseInt($('#box #text').css('font-size')) - 1) + "px");
+                        }
+                    } else {
+                        $('#box div').css('font-size', "24px");
                     }
-                } else {
-                    $('#box div').css('font-size', "24px");
-                }
+                    elem.fadeIn();
+                });
             });
         </script>
         <!-- <script>
