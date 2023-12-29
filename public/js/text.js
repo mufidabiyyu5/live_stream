@@ -29,6 +29,8 @@ var elem = $("#text");
 var urlString = window.location.href;
 var url = new URL(urlString);
 var time = url.searchParams.get("time");
+const mediaQuery1 = window.matchMedia('(min-width: 1408px)');
+const mediaQuery2 = window.matchMedia('(min-width: 1280px)');
 console.log(time);
 
 $(document).ready( () => {
@@ -98,6 +100,13 @@ function resize_to_fit(){
             $('#box #text').css('font-size', (parseInt($('#box #text').css('font-size')) - 1) + "px");
         }
     } else {
-        $('#box div').css('font-size', "24px");
+        if (mediaQuery1.matches) {
+            $('#box div').css('font-size', "32px");
+        } else if (mediaQuery2.matches) {
+            $('#box div').css('font-size', "24px");
+        }
+        else {
+            $('#box div').css('font-size', "20px");
+        }
     }
 }
