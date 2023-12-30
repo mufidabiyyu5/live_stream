@@ -20,7 +20,7 @@ body{
     height: 320px;
     position: absolute;
     top: 28.75%;
-    zoom: 80%;
+    /* zoom: 80%; */
     /* bottom: 40%; */
     left: 40%;
     /* right: 30%; */
@@ -59,7 +59,7 @@ body{
     top: 30%;
     /* bottom: 139px; */
     /* right: 30%; */
-    left: 75%;
+    left: 74.25%;
     transform: scaleX(1.238) scaleY(1.938);
     /* height: 234px;
     width: 342px;
