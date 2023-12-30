@@ -6,7 +6,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* Ubah URL foto sesuai dengan lokasi foto */
-    background-image: url('./images/NuGreenTea_Output_LiveCam_Alpha.png');
+    background-image: url('./images/livecam_bg.png');
     background-size: 100% 100%;
     background-position: center;
     -moz-background-size: 100% 100%;
@@ -20,6 +20,7 @@ body{
     height: 320px;
     position: absolute;
     top: 28.75%;
+    zoom: 80%;
     /* bottom: 40%; */
     left: 40%;
     /* right: 30%; */
@@ -40,6 +41,15 @@ body{
     /* width: 350px; */
     height: 100%;
     border-radius: 16px;
+    object-fit: fill;
+}
+
+.theovenplayer-skin{
+    overflow-y: hidden !important;
+}
+
+.ovenplayer{
+    object-fit: fill;
 }
 
 #box{
