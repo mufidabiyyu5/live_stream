@@ -101,12 +101,12 @@ function resize_to_fit(){
         }
     } else {
         if (mediaQuery1.matches) {
-            $('#box div').css('font-size', "32px");
+            $('#box div').css('font-size', "20px");
         } else if (mediaQuery2.matches) {
             $('#box div').css('font-size', "24px");
         }
         else {
-            $('#box div').css('font-size', "20px");
+            $('#box div').css('font-size', "14px");
         }
     }
 }

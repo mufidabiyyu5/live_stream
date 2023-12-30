@@ -63,10 +63,10 @@ body{
     }
     
     #box{
-        height: 32px;
-        width: 470px;
+        height: 40px;
+        width: 460px;
         position: relative;
-        top: 85%;
+        top: 84%;
         left: 11.25%;
         transform: scaleX(1.238) scaleY(1.938);
     }
@@ -142,10 +142,10 @@ body{
     }
     
     #box{
-        height: 40px;
+        height: 56px;
         width: 650px;
         position: relative;
-        top: 85%;
+        top: 84%;
         /* bottom: 139px; */
         /* right: 30%; */
         left: 11%;
