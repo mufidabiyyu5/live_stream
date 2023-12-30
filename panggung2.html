@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Live Streaming NU Green Tea</title>
+        <link rel="stylesheet" href="asset/panggung2.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="player-wrapper">
+            <div id="lumio-stream-player"></div>
+        </div>
+        <!-- <video controls loop autoplay muted is="very-cool" id="output" width="542" height="372"></video> -->
+        <div id="box" class="text-center">
+            <div id="text"></div>
+        </div>
+
+        <script src="https://sdk.lumio.id/webview/dist/lumio-stream-player/v1/lumio-stream-player.js"></script>
+        <script>
+            const lumioStreamPlayer = new LumioStreamPlayer({
+                container: "lumio-stream-player",
+                aspectRatio: "16:9",
+                title: "#MaNUfesting2024",
+                mute: true,
+                autoStart: true,
+                autoFallback: true,
+                controls: true,
+                loop: true,
+                showBigPlayButton: true,
+                sources: [
+                    {
+                        type: "webrtc",
+                        file: "wss://emitter.lumio.id:3334/app/stream",
+                    },
+                ],
+                webrtcConfig: {
+                    timeoutMaxRetry: 10,
+                    connectionTimeout: 10000,
+                },
+                onReady: function () {
+                    console.log("onReady");
+                },
+                onStateChanged: function (state) {
+                    console.log("stateChanged", state);
+                },
+                onSeek: function (position) {
+                    console.log("onSeek", position);
+                },
+                onSeeked: function () {
+                    console.log("onSeeked");
+                },
+                onTime: function (duration) {
+                    // This may occur as frequently as 10 times per second
+                    // console.log("onTime", duration);
+                },
+                onClicked: function (EventObject) {
+                    console.log("onClicked", EventObject);
+                },
+                onDestroy: function () {
+                    console.log("onDestroy");
+                },
+            });
+        </script>
+
+        <!-- <script src="./avideo-master/dist/avideo.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script src="asset/js/text.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            var elem = $("#text");
+            const mediaQuery = window.matchMedia('(min-width: 1408px)');
+            // const mediaQuery = window.matchMedia('(min-width: 1280px)');
+            // const messages = document.getElementById("text");
+
+            socket.on("chat message", (msg) => {
+                console.log("chat message panggung", msg);
+                // document.getElementById("text").innerHTML = msg;
+                elem.fadeOut(function(){
+                    elem.html(msg);
+                    if ($('#box #text').height() > $('#box').height()) {
+                        while ($('#box #text').height() > $('#box').height()) {
+                            $('#box #text').css('font-size', (parseInt($('#box #text').css('font-size')) - 1) + "px");
+                        }
+                    } else {
+                        if (mediaQuery.matches) {
+                            $('#box div').css('font-size', "32px");
+                        } else {
+                            $('#box div').css('font-size', "20px");
+                        }
+                    }
+                    elem.fadeIn();
+                });
+            });
+        </script>
+        <!-- <script>
+        const output = document.getElementById("output");
+        function init(url){
+            output.playURL(url);
+        }
+
+        window.onload = init('rtmp://110.239.67.242/live/antoni_ok2');
+    </script> -->
+    </body>
+</html>

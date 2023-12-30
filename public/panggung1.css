@@ -6,8 +6,8 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* Ubah URL foto sesuai dengan lokasi foto */
-    /* background-image: url('./images/panggung.png'); */
-    background-image: url('./images/StageTengah_Kosong.png');
+    background-image: url('./images/panggung.png');
+    /* background-image: url('./images/StageTengah_Kosong.png'); */
     background-size: 100% 100%;
     background-position: center;
     -moz-background-size: 100% 100%;
@@ -53,8 +53,7 @@ body{
         width: 720px;
         height: 230px;
         position: absolute;
-        /* top: 25%; */
-        top: 40%;
+        top: 25%;
         left: 14%;
         transform: scaleX(1.238) scaleY(1.938);
     }
@@ -68,8 +67,7 @@ body{
         height: 40px;
         width: 460px;
         position: relative;
-        /* top: 84%; */
-        top: 12%;
+        top: 84%;
         left: 11.25%;
         transform: scaleX(1.238) scaleY(1.938);
     }
@@ -121,8 +119,7 @@ body{
         width: 980px;
         height: 320px;
         position: absolute;
-        /* top: 25%; */
-        top: 40%;
+        top: 25%;
         /* bottom: 40%; */
         left: 14%;
         /* right: 30%; */
@@ -149,8 +146,7 @@ body{
         height: 56px;
         width: 650px;
         position: relative;
-        /* top: 84%; */
-        top: 12%;
+        top: 84%;
         /* bottom: 139px; */
         /* right: 30%; */
         left: 11%;

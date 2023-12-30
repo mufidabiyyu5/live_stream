@@ -22,6 +22,14 @@ app.get('/panggung', (req, res) => {
     res.sendFile(join(__dirname, 'panggung.html'))
 });
 
+app.get('/panggung1', (req, res) => {
+    res.sendFile(join(__dirname, 'panggung1.html'))
+});
+
+app.get('/panggung2', (req, res) => {
+    res.sendFile(join(__dirname, 'panggung2.html'))
+});
+
 app.use('/manual', basicAuth({
     users: { 'antoni': 'antoni' },
     challenge: true,
