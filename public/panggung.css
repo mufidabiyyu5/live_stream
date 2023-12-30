@@ -6,7 +6,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* Ubah URL foto sesuai dengan lokasi foto */
-    background-image: url('./images/NuGreenTea_Output_LiveCam_Alpha_Panggung.png');
+    background-image: url('./images/panggung.png');
     background-size: 100% 100%;
     background-position: center;
     -moz-background-size: 100% 100%;
@@ -16,29 +16,16 @@ body{
 }
 
 @media only screen and (min-width: 1024px) {
-    .player-wrapper{
+    /* .player-wrapper{
         width: 435px;
         height: 280px;
         position: absolute;
         top: 29.5%;
-        /* bottom: 40%; */
         left: 8.5%;
-        /* right: 30%; */
-        /* margin: auto; */
         transform: scaleX(1.238) scaleY(1.938);
-        /* width: 542px;
-        height: 372px;
-        position: absolute;
-        top: auto;
-        bottom: 50%;
-        left: 50%;
-        right: auto;
-        transform: scaleX(1.238);
-        transform: scaleY(1.938); */
     }
     
     #lumio-stream-player{
-        /* width: 350px; */
         height: 100%;
         border-radius: 16px;
     }
@@ -48,19 +35,40 @@ body{
         width: 250px;
         position: relative;
         top: 30%;
-        /* bottom: 139px; */
-        /* right: 30%; */
         left: 64.5%;
         transform: scaleX(1.238) scaleY(1.938);
-        /* height: 234px;
-        width: 342px;
+    }
+    
+    #text{
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        color: #285A2C;
+        text-transform: uppercase;
+    } */
+
+    .player-wrapper{
+        width: 720px;
+        height: 230px;
+        position: absolute;
+        top: 25%;
+        left: 14%;
+        transform: scaleX(1.238) scaleY(1.938);
+    }
+    
+    #lumio-stream-player{
+        height: 100%;
+        border-radius: 16px;
+    }
+    
+    #box{
+        height: 32px;
+        width: 450px;
         position: relative;
-        top: 77px;
-        bottom: 139px;
-        right: 77px;
-        left: 1200px; */
-        /* transform: scaleX(1.238);
-        transform: scaleY(1.938); */
+        top: 84%;
+        left: 11%;
+        transform: scaleX(1.238) scaleY(1.938);
     }
     
     #text{
@@ -74,13 +82,45 @@ body{
 }
 
 @media only screen and (min-width: 1408px) {
-    .player-wrapper{
+    /* .player-wrapper{
         width: 583px;
         height: 390px;
         position: absolute;
         top: 28%;
-        /* bottom: 40%; */
         left: 8.25%;
+        transform: scaleX(1.238) scaleY(1.938);
+    }
+    
+    #lumio-stream-player{
+        height: 100%;
+        border-radius: 16px;
+    }
+    
+    #box{
+        height: 300px;
+        width: 350px;
+        position: relative;
+        top: 30%;
+        left: 64.5%;
+        transform: scaleX(1.238) scaleY(1.938);
+    }
+    
+    #text{
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        color: #285A2C;
+        text-transform: uppercase;
+    } */
+
+    .player-wrapper{
+        width: 980px;
+        height: 320px;
+        position: absolute;
+        top: 25%;
+        /* bottom: 40%; */
+        left: 14%;
         /* right: 30%; */
         /* margin: auto; */
         transform: scaleX(1.238) scaleY(1.938);
@@ -102,13 +142,13 @@ body{
     }
     
     #box{
-        height: 300px;
-        width: 350px;
+        height: 40px;
+        width: 600px;
         position: relative;
-        top: 30%;
+        top: 84%;
         /* bottom: 139px; */
         /* right: 30%; */
-        left: 64.5%;
+        left: 11%;
         transform: scaleX(1.238) scaleY(1.938);
         /* height: 234px;
         width: 342px;
