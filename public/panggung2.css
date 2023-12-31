@@ -18,12 +18,12 @@ body{
 
 @media only screen and (min-width: 1024px) {
     .player-wrapper{
-        width: 435px;
-        height: 280px;
+        width: 350px;
+        height: 320px;
         position: absolute;
-        top: 29.5%;
-        left: 8.5%;
-        transform: scaleX(1.238) scaleY(1.938);
+        top: 25%;
+        left: 15%;
+        transform: scaleX(1.5) scaleY(1.5);
     }
     
     #lumio-stream-player{
@@ -33,16 +33,16 @@ body{
     
     #box{
         height: 200px;
-        width: 250px;
+        width: 300px;
         position: relative;
-        top: 30%;
-        left: 64.5%;
-        transform: scaleX(1.238) scaleY(1.938);
+        top: 20%;
+        left: 63%;
+        /* transform: scaleX(1.238) scaleY(1.938); */
     }
     
     #text{
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 32px;
+        line-height: 40px;
         font-weight: 700;
         font-family: 'Poppins', sans-serif;
         color: #285A2C;
@@ -52,12 +52,12 @@ body{
 
 @media only screen and (min-width: 1408px) {
     .player-wrapper{
-        width: 583px;
-        height: 390px;
+        width: 350px;
+        height: 320px;
         position: absolute;
-        top: 28%;
-        left: 8.25%;
-        transform: scaleX(1.238) scaleY(1.938);
+        top: 32%;
+        left: 19%;
+        transform: scaleX(2.25) scaleY(2.25);
     }
     
     #lumio-stream-player{
@@ -66,17 +66,17 @@ body{
     }
     
     #box{
-        height: 300px;
-        width: 350px;
+        height: 350px;
+        width: 400px;
         position: relative;
-        top: 30%;
-        left: 64.5%;
-        transform: scaleX(1.238) scaleY(1.938);
+        top: 15%;
+        left: 64%;
+        /* transform: scaleX(1.238) scaleY(1.938); */
     }
     
     #text{
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 48px;
+        line-height: 56px;
         font-weight: 700;
         font-family: 'Poppins', sans-serif;
         color: #285A2C;
