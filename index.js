@@ -30,6 +30,10 @@ app.get('/panggung2', (req, res) => {
     res.sendFile(join(__dirname, 'panggung2.html'))
 });
 
+app.get('/test', (req, res) => {
+    res.sendFile(join(__dirname, 'test.html'))
+});
+
 app.use('/manual', basicAuth({
     users: { 'antoni': 'antoni' },
     challenge: true,
