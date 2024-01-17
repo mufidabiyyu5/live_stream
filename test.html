@@ -11,35 +11,79 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/16/Stats.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+    
     </head>
     <body>
         <div class="player-wrapper">
             <!-- <div id="lumio-stream-player"></div> -->
-            <iframe width="420" height="315"
+            <iframe width="420" height="315" id="video"
             src="https://www.youtube.com/embed/jJPMnTXl63E?autoplay=1&mute=1">
             </iframe>
-            <audio autoplay loop controls id="audio" src="asset/videoplayback.mp3">
-            </audio>
+            <!-- <audio autoplay loop controls id="audio" src="asset/videoplayback.mp3">
+            </audio> -->
             <!-- <iframe src="asset/videoplayback.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
         </div>
         <!-- <video controls loop autoplay muted is="very-cool" id="output" width="542" height="372"></video> -->
         <div id="box" class="text-start">
             <div id="text"></div>
         </div>
-        
+        <div class="d-none">
+            <!-- <a-scene mindar-image="imageTargetSrc: https://cdn.glitch.global/bbe3a632-6215-4dfb-8a9d-3331f43617ff/targetsbaruprisma.mind?v=1670292239492; filterMinCF:0.0001; filterBeta: 0.0001;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"> -->
+                <!-- <a-assets>
+                    <a-asset-item id="birdModel" src="https://cdn.glitch.global/bbe3a632-6215-4dfb-8a9d-3331f43617ff/ChristmasTree.glb?v=1669992442385"></a-asset-item>
+                </a-assets> -->
+    
+                <!-- <a-camera position="0 0 0" look-controls="enabled: false"></a-camera> -->
+    
+                <!-- <a-entity listener mindar-image-target="targetIndex: 0">
+                    <a-gltf-model rotation="45 0 0" position="0 0 0" scale="0.21 0.21 0.21" src="#birdModel" animation-mixer>
+                </a-entity> -->
+            <!-- </a-scene> -->
+        </div>
 
-        <script src="https://sdk.lumio.id/webview/dist/lumio-stream-player/v1/lumio-stream-player.js"></script>
+        <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
         <script>
-            let a = document.getElementById("audio");
-            // $(document).ready(function () {
-            //     enableAutoplay();
-            // }); 
-            window.onload = enableAutoplay();
-            function enableAutoplay() { 
-                a.autoplay = true;
-                a.load();
-            }
+            createjs.Sound.registerSound("asset/videoplayback.mp3", "x");
+            setTimeout(function () {
+                createjs.Sound.play("x");
+            }, 1000)
         </script>
+        <script>
+        // var audio = new Audio('asset/videoplayback.mp3');
+        // var UserInteracted = setInterval(()=>{
+        //     audio.play()
+        //     .then(()=>{
+        //     clearInterval(UserInteracted);
+        //     })
+        //     .catch(()=>{
+        //     console.log("waiting for user interaction to play first notification")
+        //     });     
+        // }, 2000)
+        // window.addEventListener("DOMContentLoaded", event => {
+        //     audio.play();
+        // })
+        </script>
+        <script src="https://sdk.lumio.id/webview/dist/lumio-stream-player/v1/lumio-stream-player.js"></script>
+        <!-- <script>
+            var audio = new Audio('asset/videoplayback.mp3');
+            // $(document).ready(function () {
+            //     audio.play();
+            // }); 
+            window.onload = setInterval(() => {
+                // audio.load();
+                audio.play();
+            }, 1000);
+            // var UserInteracted = setInterval(()=>{
+            //     audio.play()   
+            // }, 1000)
+            // window.onload = audio.load();
+
+        </script> -->
         <script>
             const lumioStreamPlayer = new LumioStreamPlayer({
                 container: "lumio-stream-player",
